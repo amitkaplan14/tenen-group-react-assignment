@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import FieldRadioImage from "./field-radio-image";
 import FieldDropdown from "./field-dropdown";
 import FieldSimpleText from "./field-simple-text";
+import FieldRadioGrid from "./field-radio-grid";
 
 const Field = ({fieldId, onChange, parent}) => {
     const formFields = useSelector(state => state.ProductForm.formFields);
@@ -43,6 +44,10 @@ const Field = ({fieldId, onChange, parent}) => {
             }
             case CONSTANTS.FIELD_TYPES.SIMPLE_TEXT: {
                 field = <FieldSimpleText fieldData={fieldData} onChange={onChange}/>;
+                break;
+            }
+            case CONSTANTS.FIELD_TYPES.RADIO_GRID: {
+                field = <FieldRadioGrid fieldData={fieldData} onChange={onChange}/>;
                 break;
             }
             default: {
