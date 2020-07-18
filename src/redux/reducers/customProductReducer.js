@@ -1,5 +1,5 @@
 import {
-    UPDATE_CUSTOM_PRODUCT
+    UPDATE_PRODUCT_FORM_DATA
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -8,10 +8,10 @@ const initialState = {
 
 export default function CustomProductReducer(state = initialState, action){
     switch (action.type) {
-        case UPDATE_CUSTOM_PRODUCT: {
+        case UPDATE_PRODUCT_FORM_DATA: {
             return {
                 ...state,
-                selections: Object.assign({}, state.selections, {[action.payload.key]: action.payload.value})
+                selections: Object.assign({}, state.selections, {[action.payload.fieldId]: action.payload.value})
             }
         }
         default: {
