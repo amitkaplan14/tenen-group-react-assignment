@@ -6,7 +6,8 @@ import Field from "../fields";
 import {UpdateCustomProductField} from "../../../redux/actions/customProductActions";
 import {Title} from "../../../assets/style"
 import ImagesSlider from "../../images-slider/images-slider";
-import {FormInner, FormWrapper} from "./style";
+import {FormButton, FormInner, FormWrapper} from "./style";
+import $ from "jquery"
 
 const Form = () => {
     const product = useSelector(state => state.ProductForm.product);
@@ -26,15 +27,20 @@ const Form = () => {
         dispatch(UpdateCustomProductField({fieldId, value}))
     };
 
+    const submit = () => {
+        $('form').checkValidity()
+    };
+
     return (
         <FormWrapper>
             <ImagesSlider items={product.Images} />
-            <FormInner>
+            <FormInner onSubmit={submit}>
                 {steps.map((step, stepIndex) =>
                     <div key={stepIndex} className="step">
                         <Step data={step} stepIndex={stepIndex} onFieldChange={onFieldChange}/>
                     </div>
                 )}
+                <FormButton type="submit">Submit</FormButton>
             </FormInner>
         </FormWrapper>
 

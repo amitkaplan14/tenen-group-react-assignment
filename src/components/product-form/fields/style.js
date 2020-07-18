@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FieldWrapper = styled.div`
     display: block;
     position: relative;
-    padding: 20px 10px;
+    padding: 20px 0px;
 `;
 
 export const InputBox = styled.div`

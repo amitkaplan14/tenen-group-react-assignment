@@ -154,7 +154,7 @@
           "Value": true
         },
         {
-          "Type": "maxlength",
+          "Type": "maxLength",
           "Value": 13
         },
         {
@@ -163,7 +163,7 @@
         },
         {
           "Type": "pattern",
-          "Value": "/^[A-Z]+$/i"
+          "Value": "[A-Za-z]"
         }
       ]
     },
@@ -207,7 +207,7 @@
           "Value": true
         },
         {
-          "Type": "maxlength",
+          "Type": "maxLength",
           "Value": 13
         },
         {
@@ -216,7 +216,7 @@
         },
         {
           "Type": "pattern",
-          "Value": "/^[A-Z]+$/i"
+          "Value": "[A-Za-z]"
         }
       ]
     },

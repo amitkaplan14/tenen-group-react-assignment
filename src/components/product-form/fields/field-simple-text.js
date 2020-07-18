@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useEffectAfterInit} from "../../../utils/customHooks";
 import {useSelector} from "react-redux";
 import {FieldWrapper, StyledInput} from "./style";
+import {SetDynamicValidations} from "../../../utils/formUtils";
 
 const FieldSimpleText = ({fieldData, onChange}) => {
     const [selectedValue, setSelectedValue] = useState();
@@ -19,6 +20,8 @@ const FieldSimpleText = ({fieldData, onChange}) => {
         setSelectedValue(e.target.value);
     };
 
+    const validations = SetDynamicValidations(fieldData.Validations);
+
     return (
         <FieldWrapper className="field=dorpdown-wrapper">
 
@@ -27,7 +30,7 @@ const FieldSimpleText = ({fieldData, onChange}) => {
                     <span>{fieldData.Label}:</span>
                     <span>({fieldData.SubLabel})</span>
                 </div>
-                <StyledInput type="text" placeholder={fieldData.Placeholder} defaultValue={selectedValue} onBlur={handleOptionChange}/>
+                <StyledInput {...validations} type="text" placeholder={fieldData.Placeholder} defaultValue={selectedValue} onBlur={handleOptionChange}/>
             </label>
         </FieldWrapper>
     )

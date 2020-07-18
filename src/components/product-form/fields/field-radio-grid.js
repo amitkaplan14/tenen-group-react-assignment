@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
 import {useEffectAfterInit} from "../../../utils/customHooks";
 import {FieldWrapper, HideInput, InputBox, RadioGridLabel, RadioGridWrapper} from "./style";
+import {SetDynamicValidations} from "../../../utils/formUtils";
 
 const FieldRadioGrid = ({fieldData, onChange}) => {
     const customProductSelections = useSelector(state => state.CustomProduct.selections);
@@ -28,14 +29,14 @@ const FieldRadioGrid = ({fieldData, onChange}) => {
         setIsExpanded(!isExpanded);
     };
 
-
+    const validations = SetDynamicValidations(fieldData.Validations);
 
     const optionsGrid = isExpanded ?
         (<RadioGridWrapper>
             {options.map((option, index) =>
                 <RadioGridLabel key={index} role="radio">
                     <img src={option.Image} />
-                    <HideInput type="radio" value={option.Value} checked={option.Value.toString() === selectedValue} onChange={handleOptionChange} />
+                    <HideInput {...validations} type="radio" value={option.Value} checked={option.Value.toString() === selectedValue} onChange={handleOptionChange} />
                     {option.Label}
                 </RadioGridLabel>
             )}

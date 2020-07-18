@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
 import {useEffectAfterInit} from "../../../utils/customHooks";
 import {HideInput, RadioImageImg, RadioImageLabel} from "./style";
+import {SetDynamicValidations} from "../../../utils/formUtils";
 
 const FieldRadioImage = ({fieldData, onChange}) => {
     const customProductSelections = useSelector(state => state.CustomProduct.selections);
@@ -20,6 +21,8 @@ const FieldRadioImage = ({fieldData, onChange}) => {
         setSelectedValue(e.target.value);
     };
 
+    const validations = SetDynamicValidations(fieldData.Validations);
+
     return (
         <div className="field-radio-image-wrapper">
             <div className="radio-group" role="radiogroup">
@@ -28,7 +31,7 @@ const FieldRadioImage = ({fieldData, onChange}) => {
                     <div key={index} className="radio" role="radio">
                         <RadioImageLabel>
                             <RadioImageImg selected={option.Value.toString() === selectedValue} src={option.Image} />
-                            <HideInput type="radio" value={option.Value} checked={option.Value.toString() === selectedValue} onChange={handleOptionChange} />
+                            <HideInput {...validations} type="radio" value={option.Value} checked={option.Value.toString() === selectedValue} onChange={handleOptionChange} />
                             {option.Label}
                         </RadioImageLabel>
                     </div>
