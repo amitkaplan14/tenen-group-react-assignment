@@ -1,4 +1,3 @@
-import axios from 'axios';
 
 export const SetDynamicValidations = (validations = []) => {
     let validationAttributes = {};
@@ -10,6 +9,15 @@ export const SetDynamicValidations = (validations = []) => {
     return validationAttributes;
 };
 
-export const validateInput = (inputId) => {
-    let isValid = true;
+export const getQueryString = (queryParams = []) => {
+    let queryString = '';
+    debugger;
+    queryParams.forEach((param, index) => {
+        if (index > 0) {
+            queryString += '&';
+        }
+        queryString += `${param.Key}=${param.Value}`
+    });
+    queryString = '?'.concat(queryString);
+    return queryString;
 };

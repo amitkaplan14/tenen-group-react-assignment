@@ -4,21 +4,34 @@ import {useEffectAfterInit} from "../../../utils/customHooks";
 import {HideInput, RadioImageImg, RadioImageLabel} from "./style";
 import {SetDynamicValidations} from "../../../utils/formUtils";
 
-const FieldRadioImage = ({fieldData, onChange}) => {
+const FieldRadioImage = ({fieldData, onChange, withNavigation, onNavigate}) => {
     const customProductSelections = useSelector(state => state.CustomProduct.selections);
     const [options, setOptions] = useState([]);
-    const [selectedValue, setSelectedValue] = useState(customProductSelections[fieldData.Id]);
+    const [selectedValue, setSelectedValue] = useState();
 
     useEffect(() => {
-        setOptions(fieldData.Options)
+        setOptions(fieldData.Options);
+        setDefault();
     }, [fieldData]);
 
     useEffectAfterInit(() => {
         onChange(fieldData.Id, selectedValue);
     }, [selectedValue]);
 
-    const handleOptionChange = (e) => {
+    const setDefault = () => {
+        if (customProductSelections[fieldData.Id]) {
+            setSelectedValue(customProductSelections[fieldData.Id]);
+        }
+        options.forEach((option) => {
+            if (options.IsDefault) {
+                setSelectedValue(option.Value);
+            }
+        });
+    };
+
+    const handleOptionChange = (e, option) => {
         setSelectedValue(e.target.value);
+        // withNavigation && onNavigate(option.Url);
     };
 
     const validations = SetDynamicValidations(fieldData.Validations);
@@ -31,7 +44,7 @@ const FieldRadioImage = ({fieldData, onChange}) => {
                     <div key={index} className="radio" role="radio">
                         <RadioImageLabel>
                             <RadioImageImg selected={option.Value.toString() === selectedValue} src={option.Image} />
-                            <HideInput {...validations} type="radio" value={option.Value} checked={option.Value.toString() === selectedValue} onChange={handleOptionChange} />
+                            <HideInput {...validations} type="radio" name={fieldData.Id} value={option.Value} checked={option.Value.toString() === selectedValue} onChange={(event) => handleOptionChange(event, option)} />
                             {option.Label}
                         </RadioImageLabel>
                     </div>

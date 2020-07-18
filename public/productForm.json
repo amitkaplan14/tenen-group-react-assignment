@@ -50,7 +50,7 @@
           "Image": "https://cdn.mynamenecklace.co.uk/images/site/switch_box_silver.jpg",
           "Url": [
             {
-              "Key": "p",
+              "Key": "productId",
               "Value": 4392
             }
           ]
@@ -64,7 +64,7 @@
           "Image": "https://cdn.mynamenecklace.co.uk/images/site/switch_box_gold_plating.jpg",
           "Url": [
             {
-              "Key": "p",
+              "Key": "productId",
               "Value": 4393
             }
           ]
@@ -78,7 +78,7 @@
           "Image": "https://cdn.mynamenecklace.co.uk/images/site/switch_box_rose_gold_plating.jpg",
           "Url": [
             {
-              "Key": "p",
+              "Key": "productId",
               "Value": 4394
             }
           ]
@@ -92,7 +92,7 @@
           "Image": "https://cdn.mynamenecklace.co.uk/images/site/switch_box_gold_vermile.jpg",
           "Url": [
             {
-              "Key": "p",
+              "Key": "productId",
               "Value": 4395
             }
           ]
