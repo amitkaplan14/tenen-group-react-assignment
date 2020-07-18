@@ -4,6 +4,9 @@ import Step from "../step";
 import {useDispatch, useSelector} from 'react-redux';
 import Field from "../fields";
 import {UpdateCustomProductField} from "../../../redux/actions/customProductActions";
+import {Title} from "../../../assets/style"
+import ImagesSlider from "../../images-slider/images-slider";
+import {FormInner, FormWrapper} from "./style";
 
 const Form = () => {
     const product = useSelector(state => state.ProductForm.product);
@@ -24,16 +27,17 @@ const Form = () => {
     };
 
     return (
-        <div className="form">
-            <h1>{product.Name}</h1>
-            {steps.map((step, stepIndex) =>
-                <div key={stepIndex} className="step">
-                    <Step data={step} stepIndex={stepIndex} onFieldChange={onFieldChange}/>
-                </div>
-            )}
+        <FormWrapper>
+            <ImagesSlider items={product.Images} />
+            <FormInner>
+                {steps.map((step, stepIndex) =>
+                    <div key={stepIndex} className="step">
+                        <Step data={step} stepIndex={stepIndex} onFieldChange={onFieldChange}/>
+                    </div>
+                )}
+            </FormInner>
+        </FormWrapper>
 
-
-        </div>
     )
 };
 

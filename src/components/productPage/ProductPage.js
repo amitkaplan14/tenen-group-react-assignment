@@ -6,6 +6,8 @@ import {Get} from '../../utils/httpRequests';
 import Form from "../product-form/form/index";
 import {useDispatch, useSelector} from "react-redux";
 import {getProductFormData} from "../../redux/actions/productFormActions";
+import {ProductFormWrapper} from "./style";
+import {Title} from "../../assets/style";
 
 const ProductPage = () => {
     const dispatch = useDispatch();
@@ -21,10 +23,13 @@ const ProductPage = () => {
         : null;
 
     return (
-        <div className="product-page">
-            <h1>Product Page</h1>
+        <div class="ttt">
+        <Title>{productForm?.product?.Name}</Title>
+        <ProductFormWrapper className="product-page">
             {formContent}
+        </ProductFormWrapper>
         </div>
+
     )
 }
 

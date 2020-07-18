@@ -8,7 +8,7 @@ const FieldSimpleText = ({fieldData, onChange}) => {
 
     useEffect(() => {
         setSelectedValue(customProductSelections[fieldData.Id]);
-    }, customProductSelections);
+    }, [customProductSelections]);
 
     useEffectAfterInit(() => {
         onChange(fieldData.Id, selectedValue);

@@ -9,7 +9,7 @@ const FieldDropdown = ({fieldData, onChange}) => {
 
     useEffect(() => {
         setSelectedValue(customProductSelections[fieldData.Id]);
-    }, customProductSelections);
+    }, [customProductSelections]);
 
     useEffect(() => {
         setOptions(fieldData.Options)

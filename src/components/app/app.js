@@ -6,6 +6,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import {AppWrapper} from "../../assets/style"
 
 import Header from "../header/header";
 import {HomePage} from "../homepage/HomePage";
@@ -16,7 +17,7 @@ import ProductPage from "../productPage/ProductPage";
 function App() {
   return (
       <Router>
-          <div>
+          <AppWrapper>
               <Header/>
               <RouterSwitch>
                   <Route exact path={CONSTANTS.ROUTES.HOME}>
@@ -26,7 +27,7 @@ function App() {
                       <ProductPage/>
                   </Route>
               </RouterSwitch>
-          </div>
+          </AppWrapper>
       </Router>
 
   );
