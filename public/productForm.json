@@ -1,0 +1,252 @@
+{
+  "id": 110,
+  "Name": "Personalised Birthstone Heart Necklace in 18ct Rose Gold Plating",
+  "BasePrice": 39.90,
+  "Discount": 10.00,
+  "Images": [
+    "https://cdn.mynamenecklace.co.uk/images/products/jumbo_110-01-2559-13.jpg",
+    "https://cdn.mynamenecklace.co.uk/images/products/jumbo_110-01-2559-13_1.jpg"
+  ],
+  "Steps": [
+    {
+      "Id": 1,
+      "Order": 0,
+      "Name": "Choose Material",
+      "AdditionalInfo": {
+        "Type": 1,
+        "ArticleId": 1
+      },
+      "Fields": [21]
+    },
+    {
+      "Id": 2,
+      "Order": 1,
+      "Name": "Personalise Me",
+      "Fields": [
+        22,
+        33,
+        44
+      ]
+    }
+  ],
+  "Fields": {
+    "21": {
+      "Id": 21,
+      "Order": 10,
+      "Type": 1,
+      "Validations": [
+        {
+          "Type": "required",
+          "Value": true
+        }
+      ],
+      "Options": [
+        {
+          "Id": 0,
+          "Label": "Sterling Silver",
+          "Value": 10,
+          "IsDefault": true,
+          "Price": 49.90,
+          "Image": "https://cdn.mynamenecklace.co.uk/images/site/switch_box_silver.jpg",
+          "Url": [
+            {
+              "Key": "p",
+              "Value": 4392
+            }
+          ]
+        },
+        {
+          "Id": 1,
+          "Label": "18ct Gold Plating",
+          "Value": 11,
+          "IsDefault": false,
+          "Price": 59.90,
+          "Image": "https://cdn.mynamenecklace.co.uk/images/site/switch_box_gold_plating.jpg",
+          "Url": [
+            {
+              "Key": "p",
+              "Value": 4393
+            }
+          ]
+        },
+        {
+          "Id": 2,
+          "Label": "18ct Rose Gold Plating",
+          "Value": 12,
+          "IsDefault": false,
+          "Price": 59.90,
+          "Image": "https://cdn.mynamenecklace.co.uk/images/site/switch_box_rose_gold_plating.jpg",
+          "Url": [
+            {
+              "Key": "p",
+              "Value": 4394
+            }
+          ]
+        },
+        {
+          "Id": 3,
+          "Label": "18ct Gold Vermeil",
+          "Value": 13,
+          "IsDefault": false,
+          "Price": 79.90,
+          "Image": "https://cdn.mynamenecklace.co.uk/images/site/switch_box_gold_vermile.jpg",
+          "Url": [
+            {
+              "Key": "p",
+              "Value": 4395
+            }
+          ]
+        }
+      ]
+    },
+    "22": {
+      "Id": 22,
+      "Order": 10,
+      "Label": "Select engraving options (1-3)",
+      "AdditionalInfo": {
+        "Type": 2,
+        "Title": "Engraving guide",
+        "ArticleId": 2
+      },
+      "Type": 2,
+      "Validations": [
+        {
+          "Type": "required",
+          "Value": true
+        }
+      ],
+      "Options": [
+        {
+          "Id": 0,
+          "Label": "1 inscription + 1 birthstone",
+          "Value": 1110,
+          "IsDefault": true
+        },
+        {
+          "Id": 1,
+          "Label": "2 inscription + 2 birthstone",
+          "Value": 1111,
+          "IsDefault": false,
+          "Price": 10,
+          "ChildrenFields": [
+            55,
+            66
+          ]
+        },
+        {
+          "Id": 2,
+          "Label": "3 inscription + 3 birthstone",
+          "Value": 1112,
+          "IsDefault": false,
+          "Price": 20
+        }
+      ]
+    },
+    "33": {
+      "Id": 33,
+      "Order": 20,
+      "Label": "1st inscription",
+      "SubLabel": "Up to 13 characters",
+      "Type": 3,
+      "Validations": [
+        {
+          "Type": "required",
+          "Value": true
+        },
+        {
+          "Type": "maxlength",
+          "Value": 13
+        },
+        {
+          "Type": "minLength",
+          "Value": 1
+        },
+        {
+          "Type": "Pattern",
+          "Value": "/^[A-Z]+$/i"
+        }
+      ]
+    },
+    "44": {
+      "Id": 44,
+      "Order": 30,
+      "Label": "1st Swarovski birthstone",
+      "Type": 4,
+      "Validations": [
+        {
+          "Type": "required",
+          "Value": true
+        }
+      ],
+      "Options": [
+        {
+          "Id": 0,
+          "Label": "January - Garnet",
+          "Value": 2200,
+          "IsDefault": true,
+          "Image": "https://cdn.mynamenecklace.co.uk/images/products/January_Garnet.png"
+        },
+        {
+          "Id": 1,
+          "Label": "February - Amethyst",
+          "Value": 2201,
+          "IsDefault": false,
+          "Image": "https://cdn.mynamenecklace.co.uk/images/products/February_Amethyst.png"
+        }
+      ]
+    },
+    "55": {
+      "Id": 55,
+      "Order": 31,
+      "Label": "2st inscription",
+      "SubLabel": "Up to 13 characters",
+      "Type": 3,
+      "Validations": [
+        {
+          "Type": "required",
+          "Value": true
+        },
+        {
+          "Type": "maxlength",
+          "Value": 13
+        },
+        {
+          "Type": "minLength",
+          "Value": 1
+        },
+        {
+          "Type": "Pattern",
+          "Value": "/^[A-Z]+$/i"
+        }
+      ]
+    },
+    "66": {
+      "Id": 66,
+      "Order": 32,
+      "Label": "2st Swarovski birthstone",
+      "Type": 4,
+      "Validations": [
+        {
+          "Type": "required",
+          "Value": true
+        }
+      ],
+      "Options": [
+        {
+          "Id": 0,
+          "Label": "January - Garnet",
+          "Value": 2200,
+          "IsDefault": true,
+          "Image": "https://cdn.mynamenecklace.co.uk/images/products/January_Garnet.png"
+        },
+        {
+          "Id": 1,
+          "Label": "February - Amethyst",
+          "Value": 2201,
+          "IsDefault": false,
+          "Image": "https://cdn.mynamenecklace.co.uk/images/products/February_Amethyst.png"
+        }
+      ]
+    }
+  }
+}

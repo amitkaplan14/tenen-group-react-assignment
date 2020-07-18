@@ -1,0 +1,1 @@
+// export const getProductFormState = store => store.ProductForm;
