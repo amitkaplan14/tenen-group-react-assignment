@@ -25,7 +25,8 @@
       "Fields": [
         22,
         33,
-        44
+        44,
+        77
       ]
     }
   ],
@@ -162,7 +163,7 @@
           "Value": 1
         },
         {
-          "Type": "Pattern",
+          "Type": "pattern",
           "Value": "/^[A-Z]+$/i"
         }
       ]
@@ -215,7 +216,7 @@
           "Value": 1
         },
         {
-          "Type": "Pattern",
+          "Type": "pattern",
           "Value": "/^[A-Z]+$/i"
         }
       ]
@@ -245,6 +246,31 @@
           "Value": 2201,
           "IsDefault": false,
           "Image": "https://cdn.mynamenecklace.co.uk/images/products/February_Amethyst.png"
+        }
+      ]
+    },
+    "77": {
+      "Id": 77,
+      "Order": 22,
+      "Label": "test",
+      "SubLabel": "Up to 13 characters",
+      "Type": 3,
+      "Validations": [
+        {
+          "Type": "required",
+          "Value": true
+        },
+        {
+          "Type": "maxlength",
+          "Value": 13
+        },
+        {
+          "Type": "minLength",
+          "Value": 1
+        },
+        {
+          "Type": "pattern",
+          "Value": "/^[A-Z]+$/i"
         }
       ]
     }

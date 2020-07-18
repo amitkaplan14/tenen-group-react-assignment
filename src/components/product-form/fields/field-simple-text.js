@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useEffectAfterInit} from "../../../utils/customHooks";
 import {useSelector} from "react-redux";
+import {FieldWrapper, StyledInput} from "./style";
 
 const FieldSimpleText = ({fieldData, onChange}) => {
     const [selectedValue, setSelectedValue] = useState();
@@ -19,16 +20,16 @@ const FieldSimpleText = ({fieldData, onChange}) => {
     };
 
     return (
-        <div className="field=dorpdown-wrapper">
+        <FieldWrapper className="field=dorpdown-wrapper">
 
             <label>
                 <div>
                     <span>{fieldData.Label}:</span>
                     <span>({fieldData.SubLabel})</span>
                 </div>
-                <input type="text" placeholder={fieldData.Placeholder} defaultValue={selectedValue} onBlur={handleOptionChange}/>
+                <StyledInput type="text" placeholder={fieldData.Placeholder} defaultValue={selectedValue} onBlur={handleOptionChange}/>
             </label>
-        </div>
+        </FieldWrapper>
     )
 };
 

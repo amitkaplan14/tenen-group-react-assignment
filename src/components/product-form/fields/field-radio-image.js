@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
 import {useEffectAfterInit} from "../../../utils/customHooks";
+import {HideInput, RadioImageImg, RadioImageLabel} from "./style";
 
 const FieldRadioImage = ({fieldData, onChange}) => {
     const customProductSelections = useSelector(state => state.CustomProduct.selections);
@@ -25,11 +26,11 @@ const FieldRadioImage = ({fieldData, onChange}) => {
                 {fieldData.Label ? <div>{fieldData.Label}</div> : null}
                 {options.map((option, index) =>
                     <div key={index} className="radio" role="radio">
-                        <label>
-                            <img src={option.Image} />
-                            <input type="radio" value={option.Value} checked={option.Value.toString() === selectedValue} onChange={handleOptionChange} />
+                        <RadioImageLabel>
+                            <RadioImageImg selected={option.Value.toString() === selectedValue} src={option.Image} />
+                            <HideInput type="radio" value={option.Value} checked={option.Value.toString() === selectedValue} onChange={handleOptionChange} />
                             {option.Label}
-                        </label>
+                        </RadioImageLabel>
                     </div>
                 )}
             </div>

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useEffectAfterInit} from "../../../utils/customHooks";
 import {useSelector} from "react-redux";
+import {FieldSelectWrapper, FieldWrapper} from "./style";
 
 const FieldDropdown = ({fieldData, onChange}) => {
     const [options, setOptions] = useState([]);
@@ -24,17 +25,17 @@ const FieldDropdown = ({fieldData, onChange}) => {
     };
 
     return (
-        <div className="field=dorpdown-wrapper">
+        <FieldWrapper className="field=dorpdown-wrapper">
 
             <label>
                 <div>{fieldData.Label}</div>
-                <select value={selectedValue} onChange={handleOptionChange}>
+                <FieldSelectWrapper value={selectedValue} onChange={handleOptionChange}>
                     {options.map((option, index) =>
                         <option key={index} value={option.Value}>{option.Label}</option>
                     )}
-                </select>
+                </FieldSelectWrapper>
             </label>
-        </div>
+        </FieldWrapper>
     )
 };
 
