@@ -14,14 +14,22 @@ const Field = ({fieldId, onChange, parent}) => {
 
     useEffect(() => {
         setFieldData(formFields[fieldId]);
+        setShowField(formFields[fieldId].show);
     }, [fieldId, formFields]);
 
-    // if (parent) {
-    //     useEffect(() => {
-    //         setShowField(customProductSelections[parent] === option.Value.toString());
-    //     }, [customProductSelections[parent]]);
-    // }
+    /**
+     * checking and changing the Show flag every time parent's value is changing.
+     */
+    useEffect(() => {
+        if (parent && fieldData) {
+            setShowField(customProductSelections[parent] === fieldData.showCondition.toString());
+        }
+    }, [parent, customProductSelections[parent]]);
 
+    /**
+     * returns the relevant field component by the field's type type.
+     * @returns {*}
+     */
     const setField = () => {
         let field;
         switch(fieldData?.Type) {
@@ -46,8 +54,7 @@ const Field = ({fieldId, onChange, parent}) => {
 
     return (
         <div className="main-field-wrapper">
-
-            {setField()}
+            {showField && setField()}
         </div>
     )
 };

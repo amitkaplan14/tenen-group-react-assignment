@@ -1,12 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import {useEffectAfterInit} from "../../../utils/customHooks";
+import {useSelector} from "react-redux";
 
 const FieldDropdown = ({fieldData, onChange}) => {
     const [options, setOptions] = useState([]);
+    const customProductSelections = useSelector(state => state.CustomProduct.selections);
     const [selectedValue, setSelectedValue] = useState();
 
     useEffect(() => {
-        console.log('fieldData', fieldData);
+        setSelectedValue(customProductSelections[fieldData.Id]);
+    }, customProductSelections);
+
+    useEffect(() => {
         setOptions(fieldData.Options)
     }, [fieldData]);
 

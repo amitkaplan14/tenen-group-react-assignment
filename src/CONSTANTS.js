@@ -6,6 +6,7 @@ export const CONSTANTS = {
     FIELD_TYPES: {
         RADIO_IMAGE: 1,
         DROPDOWN: 2,
-        SIMPLE_TEXT: 3
+        SIMPLE_TEXT: 3,
+        RADIO_GRID: 4
     }
 };

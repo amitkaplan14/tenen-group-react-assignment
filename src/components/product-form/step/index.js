@@ -5,15 +5,16 @@ import {useSelector} from "react-redux";
 const Step = ({data, stepIndex, onFieldChange})  => {
     const formFields = useSelector(state => state.ProductForm.formFields);
     const [fields, setFields] = useState([]);
+
     useEffect(() => {
         setAllStepFields(data.Fields);
-        // setFields(data.Fields);
     }, [data]);
 
-    useEffect(() => {
-        // setAllStepFields(data.Fields);
-    }, [fields]);
-
+    /**
+     * creates an array with all fields that exists in the step (parents and children).
+     * sets fields from state.
+     * @param stepFields - step's fields
+     */
     const setAllStepFields = (stepFields) => {
         let allFields = [];
         stepFields.forEach((fieldId) => {
@@ -27,6 +28,12 @@ const Step = ({data, stepIndex, onFieldChange})  => {
         setFields(allFields);
     };
 
+    /**
+     * Get all field's children
+     * @param parentOptions - parent's field's options if has any.
+     * @param fieldId - id
+     * @returns {Array}
+     */
     const getChildren = (parentOptions, fieldId) => {
         let children = [];
         if (parentOptions) {
@@ -46,7 +53,7 @@ const Step = ({data, stepIndex, onFieldChange})  => {
 
     return (
         <div>
-            <h2>Step {stepIndex}: {data.Name}</h2>
+            <h2>Step {stepIndex + 1}: {data.Name}</h2>
             <Fragment>
                 {fields.map((field, index) =>
                     <Field key={index} fieldId={field.Id} onChange={onFieldChange} parent={field.parent}/>

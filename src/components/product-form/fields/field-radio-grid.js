@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
 import {useEffectAfterInit} from "../../../utils/customHooks";
 
-const FieldRadioImage = ({fieldData, onChange}) => {
+const FieldRadioGrid = ({fieldData, onChange}) => {
     const customProductSelections = useSelector(state => state.CustomProduct.selections);
     const [options, setOptions] = useState([]);
     const [selectedValue, setSelectedValue] = useState(customProductSelections[fieldData.Id]);
@@ -37,4 +37,4 @@ const FieldRadioImage = ({fieldData, onChange}) => {
     )
 };
 
-export default FieldRadioImage;
+export default FieldRadioGrid;
